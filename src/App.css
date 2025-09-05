@@ -12,7 +12,7 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #282e91aa);
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
@@ -40,3 +40,80 @@
 .read-the-docs {
   color: #888;
 }
+
+.btns{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.btns_elemt{
+  background-color: #C5B0CD;
+  font-size: 0.8rem;
+  color: black;
+  transition: 300ms ease;
+  text-transform: uppercase;
+}
+.btns_elemt--ant{
+  border-radius: 1rem 0 0 1rem;
+}
+.btns_elemt--next{
+  border-radius: 0 1rem 1rem 0;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form div{
+  display: flex;
+}
+.form div input{
+  flex: 1;
+}
+.form div label{
+  text-align: start;
+  flex: 0.5;
+}
+.form--btn{
+  justify-content: flex-end;
+}
+
+td{
+  width: 4rem;
+  height: 4rem;
+  border: 1PX solid #415E72;
+  background-color: #0f1f27;
+}
+.calendar_day{
+  height: 100%;
+  width: 100%;
+  text-align: end;
+  box-sizing: border-box;
+  padding: 0.3rem;
+}
+.marcado{
+  color: rgb(11, 248, 11);
+}
+.normal{
+  color: gray;
+}
+.fin{
+  color: rgb(255, 255, 0);
+}
+.festivo{
+  color: orange;
+}
+@media (hover:hover) {
+  .btns_elemt:hover{
+    border: 1px solid #C5B0CD;
+    background-color: transparent;
+    color: #C5B0CD;
+  }
+  .btns_elemt--ant:hover{
+    transform: translateX(-0.5rem);
+  }
+  .btns_elemt--next:hover{
+    transform: translateX(0.5rem);
+  }
+}
+

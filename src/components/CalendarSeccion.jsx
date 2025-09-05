@@ -4,15 +4,15 @@ import Calendar from './Calendar';
 import { DateRangeContext } from '../context/DateRangeContext';
 
 export default function CalendarSeccion() {
-    const {firstDay} = useContext(DateRangeContext);
+    const { firstDay } = useContext(DateRangeContext);
     const [month, setMonth] = useState(crearFechaLocalHoy().getMonth()); // 0 = Enero, 11 = Diciembre
     const [year, setYear] = useState(crearFechaLocalHoy().getFullYear());
 
-    useEffect(()=>{
-        if(firstDay){
+    useEffect(() => {
+        if (firstDay) {
             setMonth(crearFechaLocal(firstDay).getMonth())
         }
-    },[firstDay])
+    }, [firstDay])
 
     const handledMes = (inc) => {
         let newMonth = month + inc;
@@ -31,8 +31,10 @@ export default function CalendarSeccion() {
     return (
         <>
             <Calendar month={month} year={year} />
-            <button onClick={() => handledMes(-1)}>Mes Anterior</button>
-            <button onClick={() => handledMes(1)}>Mes Proximo</button>
+            <section className='btns'>
+                <button className='btns_elemt btns_elemt--ant' onClick={() => handledMes(-1)}>Mes Anterior</button>
+                <button className='btn btns_elemt btns_elemt--next' onClick={() => handledMes(1)}>Mes Proximo</button>
+            </section>
         </>
     )
 }

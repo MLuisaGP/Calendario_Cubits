@@ -7,18 +7,18 @@ export default function DateCalendar({day,marketDay}) {
   const fecha = day ?crearFechaLocal(day):'';
   const dayF = day? fecha.getDate():'';
   const weekday = day? fecha.getDay():'';
-  let color = marketDay?'green':'gray';
+  let color = marketDay?'marcado':'normal';
   if(marketDay && [0,6].includes(weekday)){
-    color = 'yellow';
+    color = 'fin';
   }
   if(marketDay && esDiaFestivo(day)){
-    color = 'orange';
+    color = 'festivo';
   }
   // console.log(weekday);
   
   return (
     <>
-    <div style={{ 'color':color}}>{dayF}</div>
+    <div className={`calendar_day ${color}`} >{dayF}</div>
     </>
   )
 }

@@ -2,8 +2,6 @@ import React, { useContext } from 'react';
 import DateCalendar from './DateCalendar';
 import { getMonthDays } from '../Utils/getMonthDay';
 import { DateRangeContext } from '../context/DateRangeContext';
-
-
 export default function Calendar({ month, year }) {
   const {marketDays} = useContext(DateRangeContext);
   const monthsNames = [
@@ -11,7 +9,7 @@ export default function Calendar({ month, year }) {
     'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
   ];
   const weekdaysNames = [
-    'Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'
+    'Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sá'
   ];
 
 //   const date = crearFechaLocal(firstDay); // ← corregido aquí
@@ -30,6 +28,8 @@ export default function Calendar({ month, year }) {
     }
   }
   if (row.length > 0) {
+    const faltantes = 7-row.length;
+    row = row.concat(new Array(faltantes).fill(null));
     rows.push(row);
   }
 
