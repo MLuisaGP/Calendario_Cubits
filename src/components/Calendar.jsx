@@ -9,7 +9,7 @@ export default function Calendar({ month, year }) {
     'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
   ];
   const weekdaysNames = [
-    'Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sá'
+    'Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sáb'
   ];
 
 //   const date = crearFechaLocal(firstDay); // ← corregido aquí
